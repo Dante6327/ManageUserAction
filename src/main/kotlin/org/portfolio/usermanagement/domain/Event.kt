@@ -1,4 +1,27 @@
 package org.portfolio.usermanagement.domain
 
-class Event {
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
+import jakarta.persistence.Table
+
+@Entity
+@Table(name = "event")
+class Event(
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id : Long = 0,
+
+    @Column
+    val userId : String? = null ,
+
+    @Column
+    val eventName : String? = null,
+
+    @Column
+    val properties: String? = null
+) {
+
 }

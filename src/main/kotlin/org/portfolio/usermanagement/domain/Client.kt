@@ -17,10 +17,13 @@ class Client (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
 
-    @Column
+    @Column(nullable = false)
     val companyName: String,
 
-    @Column
+    @Column(nullable = false)
     val apiKey: String, //api key - 추후 해시 알고리즘으로 단방향 암호화 하여 DB 저장
-){
+
+    @Column(nullable = false, unique = true)
+    val businessRegistrationCertificate: String, // 사업자등록번호
+): BaseEntity() {
 }
